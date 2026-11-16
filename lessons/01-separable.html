@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 可分離變數｜微分方程筆記</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><a href="../index.html">微分方程筆記</a></header>
+<main>
+  <h1>01 可分離變數</h1>
+  <p class="lead">能把 x 和 y 分到等號兩邊的方程，兩邊各積分一次就解完了。</p>
+
+  <h2>這頁要會什麼</h2>
+  <ul>
+    <li>看出一個方程能不能分離變數</li>
+    <li>照步驟解出通解</li>
+    <li>用初始條件求出常數 C</li>
+    <li>把答案代回原方程驗算</li>
+  </ul>
+
+  <h2>觀念</h2>
+  <div class="note">
+    <p>如果方程可以寫成 y' = g · h，其中 g 只含 x，h 只含 y，就是可分離的。</p>
+    <p>這時把 y' 改寫成 dy/dx，整理成 dy/h = g dx，兩邊再各自積分。</p>
+  </div>
+
+  <h2>解題步驟</h2>
+  <ol>
+    <li>把 y' 寫成 dy/dx。</li>
+    <li>含 y 的項連同 dy 移到左邊，含 x 的項連同 dx 移到右邊。</li>
+    <li>兩邊各自積分，常數 C 只加在一邊。</li>
+    <li>解得出 y 就寫成 y = ...，解不出來就留著隱函數。</li>
+    <li>回頭看剛才除掉了什麼。被除掉的項如果本身是解，要確認有沒有漏掉。</li>
+    <li>有初始條件就代入求 C，最後代回原方程驗算。</li>
+  </ol>
+
+  <h2>例題</h2>
+  <h3>例一 y' = 2xy，而且 x = 0 時 y = 3</h3>
+  <span class="eq">dy/y = 2x dx
+ln|y| = x² + C₁
+y = C e<sup>x²</sup>        其中 C = ±e<sup>C₁</sup></span>
+  <p>第一步除以了 y，所以 y = 0 被漏掉。不過 y = 0 本身是解，而且正好是 C = 0 的情況，通解已經包含它。</p>
+  <p>代入 x = 0、y = 3，得到 3 = C · e⁰，所以 C = 3。特解是 y = 3e<sup>x²</sup>。</p>
+  <p>驗算：y' = 6x e<sup>x²</sup>，而 2xy = 2x · 3e<sup>x²</sup> = 6x e<sup>x²</sup>，兩邊相等。初始條件 x = 0 時 y = 3e⁰ = 3，也成立。</p>
+
+  <h3>例二 y' = x/y</h3>
+  <span class="eq">y dy = x dx
+y²/2 = x²/2 + C₁
+y² = x² + C        其中 C = 2C₁</span>
+  <p>這題解不太需要硬寫成 y = ± 根號，留成隱函數就可以。</p>
+  <p>驗算：兩邊對 x 微分，得 2y · y' = 2x，所以 y' = x/y，和原方程一致。要注意原方程只在 y ≠ 0 時有意義。</p>
+
+  <h2>考點</h2>
+  <div class="exam"><ul>
+    <li>先判斷能不能分離，不能分離就不要硬做。</li>
+    <li>常數 C 只加一次。</li>
+    <li>除以含 y 的式子時，要檢查它等於 0 的情況。</li>
+    <li>通解有 C，特解是用初始條件把 C 定下來。</li>
+  </ul></div>
+
+  <h2>容易錯的地方</h2>
+  <ul>
+    <li>積分 dy/y 時，忘了 ln 裡要加絕對值。</li>
+    <li>兩邊各加一個常數。這不算錯，但是多餘，合併成一個就好。</li>
+    <li>解完不驗算，符號錯了也不知道。</li>
+  </ul>
+
+  <nav class="pager">
+    <a href="../index.html">← 目錄</a>
+    <a href="../index.html">目錄</a>
+    <a href="02-first-order-linear.html">下一頁 →</a>
+  </nav>
+</main>
+</body>
+</html>

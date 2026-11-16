@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 一階線性方程｜微分方程筆記</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><a href="../index.html">微分方程筆記</a></header>
+<main>
+  <h1>02 一階線性方程</h1>
+  <p class="lead">不能分離變數的線性方程，乘上積分因子後，左邊會變成一個乘積的導數。</p>
+
+  <h2>這頁要會什麼</h2>
+  <ul>
+    <li>把方程整理成標準形</li>
+    <li>算出積分因子</li>
+    <li>解出通解，並說明它由哪兩部分組成</li>
+    <li>代回原方程驗算</li>
+  </ul>
+
+  <h2>觀念</h2>
+  <div class="note">
+    <p>標準形是 y' + P y = Q，其中 P 和 Q 都只含 x。</p>
+    <p>積分因子 μ = e<sup>∫P dx</sup>。兩邊乘上 μ 之後，左邊正好是 μy 對 x 的導數。</p>
+  </div>
+
+  <h2>解題步驟</h2>
+  <ol>
+    <li>整理成 y' + P y = Q。y' 前面的係數一定要是 1，不是 1 就先全部除掉。</li>
+    <li>算 μ = e<sup>∫P dx</sup>。這裡的積分不用加常數。</li>
+    <li>兩邊乘上 μ，左邊變成 μy 的導數。</li>
+    <li>兩邊積分，得到 μy = ∫ μQ dx + C。</li>
+    <li>兩邊除以 μ，解出 y。</li>
+    <li>代回原方程驗算。</li>
+  </ol>
+
+  <h2>例題</h2>
+  <h3>例一 y' + 2xy = x</h3>
+  <p>已經是標準形，P = 2x，Q = x。</p>
+  <span class="eq">μ = e<sup>∫2x dx</sup> = e<sup>x²</sup>
+e<sup>x²</sup> y' + 2x e<sup>x²</sup> y = x e<sup>x²</sup>
+左邊就是 e<sup>x²</sup>y 的導數
+e<sup>x²</sup> y = ∫ x e<sup>x²</sup> dx = ½ e<sup>x²</sup> + C
+y = ½ + C e<sup>−x²</sup></span>
+  <p>驗算：y' = −2xC e<sup>−x²</sup>，2xy = x + 2xC e<sup>−x²</sup>。兩式相加，含 C 的項互相抵消，剩下 x，等於原方程右邊。</p>
+
+  <h3>通解的組成</h3>
+  <p>上一頁解過 y' = 2xy。這一頁的方程把右邊換成 x 之後，通解長這樣：</p>
+  <div class="scroll"><table>
+    <tr><th>部分</th><th>內容</th><th>來源</th></tr>
+    <tr><td>齊次解</td><td>C e<sup>−x²</sup></td><td>令右邊 Q = 0 解出來</td></tr>
+    <tr><td>特解</td><td class="mark">½</td><td>讓原方程成立的一個解</td></tr>
+    <tr><td>通解</td><td>½ + C e<sup>−x²</sup></td><td>兩者相加</td></tr>
+  </table></div>
+  <p>這個結構之後在二階非齊次方程還會再出現。</p>
+
+  <h2>考點</h2>
+  <div class="exam"><ul>
+    <li>y' 的係數一定先化成 1，才能讀出 P 和 Q。</li>
+    <li>積分因子不加常數，常數留到最後一次積分才加。</li>
+    <li>通解等於齊次解加特解。</li>
+  </ul></div>
+
+  <h2>容易錯的地方</h2>
+  <ul>
+    <li>遇到 x y' + y = x² 這種題，沒有先除以 x，P 和 Q 就讀錯了。</li>
+    <li>指數的正負號寫反，例如把 e<sup>−x²</sup> 寫成 e<sup>x²</sup>。</li>
+    <li>最後除以 μ 時，漏了把 C 一起除，結果 C 前面沒有指數項。</li>
+  </ul>
+
+  <nav class="pager">
+    <a href="01-separable.html">← 上一頁</a>
+    <a href="../index.html">目錄</a>
+    <a href="03-second-order-constant.html">下一頁 →</a>
+  </nav>
+</main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+:root{
+  --paper:#F5F7FA; --card:#FFFFFF; --ink:#1D2433; --muted:#5A6577;
+  --accent:#2F5D9E; --mark:#FFE08A; --rule:#D8DEE7; --soft:#E9F0FA; --warn:#FBF0D5;
+}
+*{box-sizing:border-box}
+html{font-size:17px}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85}
+main,header.site,footer.site{max-width:40em;margin:0 auto;padding:0 1.25rem}
+header.site{padding-top:1.25rem;padding-bottom:.5rem;font-size:.9rem}
+header.site a{color:var(--muted);text-decoration:none}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;line-height:1.35}
+h1{font-size:1.9rem;margin:1.5rem 0 .5rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+h3{font-size:1.05rem;margin:1.6rem 0 .3rem}
+a{color:var(--accent)}
+.lead{font-size:1.08rem;color:var(--muted);margin-top:0}
+code,.eq{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:.92em}
+.eq{display:block;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:.7rem 1rem;margin:1rem 0;white-space:pre;overflow-x:auto}
+.note,.exam{border-left:4px solid var(--accent);background:var(--soft);padding:.6rem 1rem;margin:1.2rem 0;border-radius:0 6px 6px 0}
+.exam{border-left-color:#B7791F;background:var(--warn)}
+.note>:first-child,.exam>:first-child{margin-top:0}
+.note>:last-child,.exam>:last-child{margin-bottom:0}
+.scroll{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;background:var(--card);font-size:.95rem}
+th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:center}
+th{background:#EDF1F6}
+td.mark{background:var(--mark);font-weight:700}
+ol li{margin:.3rem 0}
+.lessons{list-style:none;padding:0;margin:1rem 0}
+.lessons li{background:var(--card);border:1px solid var(--rule);border-radius:8px;margin:.7rem 0}
+.lessons a{display:block;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.lessons a:hover,.lessons a:focus-visible{outline:2px solid var(--accent)}
+.lessons strong{display:block}
+.lessons span{color:var(--muted);font-size:.92rem}
+figure.field{margin:1rem 0}
+figure.field svg{width:100%;height:auto;background:var(--card);border:1px solid var(--rule);border-radius:8px}
+figure.field figcaption{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+.field .tick{stroke:#9AA6B8;stroke-width:1.4;stroke-linecap:round}
+.field .curve{stroke:var(--accent);stroke-width:2.2;fill:none}
+.field .rest{stroke:#B7791F;stroke-width:1.6;stroke-dasharray:5 4;fill:none}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 2rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.95rem}
+footer.site{color:var(--muted);font-size:.85rem;padding-bottom:2rem}
