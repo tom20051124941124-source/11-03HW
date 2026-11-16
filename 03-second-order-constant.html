@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 二階常係數齊次方程｜微分方程筆記</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><a href="../index.html">微分方程筆記</a></header>
+<main>
+  <h1>03 二階常係數齊次方程</h1>
+  <p class="lead">把微分方程變成一個一般的二次方程，再依判別式決定解的形式。</p>
+
+  <h2>這頁要會什麼</h2>
+  <ul>
+    <li>寫出特徵方程</li>
+    <li>依判別式判斷是哪一種情況</li>
+    <li>寫出通解，並代回驗算</li>
+  </ul>
+
+  <h2>觀念</h2>
+  <div class="note">
+    <p>方程的形式是 y'' + a y' + b y = 0，a 和 b 是常數。</p>
+    <p>試著令 y = e<sup>rx</sup> 代入。因為 e<sup>rx</sup> 不會等於 0，剩下的就是特徵方程，characteristic equation：</p>
+    <p>r² + a r + b = 0</p>
+  </div>
+  <div class="scroll"><table>
+    <tr><th>判別式</th><th>根</th><th>通解</th></tr>
+    <tr><td>大於 0</td><td>兩個相異實根 r₁、r₂</td><td>C₁ e<sup>r₁x</sup> + C₂ e<sup>r₂x</sup></td></tr>
+    <tr><td>等於 0</td><td>重根 r</td><td>C₁ e<sup>rx</sup> + C₂ x e<sup>rx</sup></td></tr>
+    <tr><td>小於 0</td><td>共軛複根 α ± βi</td><td>C₁ e<sup>αx</sup> cos βx + C₂ e<sup>αx</sup> sin βx</td></tr>
+  </table></div>
+
+  <h2>解題步驟</h2>
+  <ol>
+    <li>寫出特徵方程 r² + a r + b = 0。</li>
+    <li>解出 r。</li>
+    <li>看判別式，確定屬於上表哪一列。</li>
+    <li>照那一列寫出通解。</li>
+    <li>有兩個初始條件時，代入解出 C₁ 和 C₂。</li>
+    <li>代回原方程驗算。</li>
+  </ol>
+
+  <h2>例題</h2>
+  <h3>例一 y'' − 3y' + 2y = 0</h3>
+  <span class="eq">r² − 3r + 2 = 0
+分解成 r − 1 乘 r − 2，所以 r = 1 或 2
+y = C₁ e<sup>x</sup> + C₂ e<sup>2x</sup></span>
+  <p>驗算：e<sup>x</sup> 的二階導、一階導、本身都是 e<sup>x</sup>，係數是 1 − 3 + 2 = 0。e<sup>2x</sup> 的係數是 4 − 6 + 2 = 0。兩個都成立，線性組合也成立。</p>
+
+  <h3>例二 y'' − 4y' + 4y = 0</h3>
+  <span class="eq">r² − 4r + 4 = 0
+r = 2 是重根
+y = C₁ e<sup>2x</sup> + C₂ x e<sup>2x</sup></span>
+  <p>驗算 x e<sup>2x</sup>：y' = e<sup>2x</sup> + 2x e<sup>2x</sup>，y'' = 4e<sup>2x</sup> + 4x e<sup>2x</sup>。代入後 e<sup>2x</sup> 的項是 4 − 4 = 0，x e<sup>2x</sup> 的項是 4 − 8 + 4 = 0。成立。</p>
+
+  <h3>例三 y'' + 2y' + 5y = 0</h3>
+  <span class="eq">r² + 2r + 5 = 0
+判別式是 4 − 20 = −16，所以 r = −1 ± 2i
+y = C₁ e<sup>−x</sup> cos 2x + C₂ e<sup>−x</sup> sin 2x</span>
+  <p>驗算 e<sup>−x</sup> cos 2x：代入後 cos 項的係數是 −3 − 2 + 5 = 0，sin 項的係數是 4 − 4 = 0。成立。sin 那一項用同樣方式檢查。</p>
+
+  <h2>考點</h2>
+  <div class="exam"><ul>
+    <li>三種判別式對應三種通解，要能默寫。</li>
+    <li>重根的第二個解要多乘一個 x。</li>
+    <li>複根只取 α 和 β，不需要同時寫出共軛的兩個根。</li>
+  </ul></div>
+
+  <h2>容易錯的地方</h2>
+  <ul>
+    <li>重根時忘了乘 x，結果只剩一個解，通解少了一半。</li>
+    <li>複根的情況漏掉 e<sup>αx</sup> 這個因子。</li>
+    <li>判別式算錯，整題的形式就跟著錯。</li>
+  </ul>
+
+  <nav class="pager">
+    <a href="02-first-order-linear.html">← 上一頁</a>
+    <a href="../index.html">目錄</a>
+    <a href="../index.html">下一頁 →</a>
+  </nav>
+</main>
+</body>
+</html>
